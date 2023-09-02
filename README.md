@@ -1,2 +1,2 @@
-# Baekjoon
-This is a auto push repository for Baekjoon Online Judge created with [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub).
+<h6>하루 1문제씩 꾸준히 해보자고</h6>
+<h2>2023.09.02(토) 시작</h2>
