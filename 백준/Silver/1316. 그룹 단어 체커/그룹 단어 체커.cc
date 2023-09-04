@@ -8,8 +8,7 @@ int main() {
 
 	int count = n;
 
-	bool isSold[26];
-	for (int i = 0; i < 26; i++)isSold[i] = false;
+	bool isSold[26] = { false, };
 
 	for (int i = 0; i < n; i++) {
 		string s;
