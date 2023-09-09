@@ -7,8 +7,6 @@ int main() {
 	string N;
 	int B;
 
-	char c = '5';
-
 	long long outp = 0;
 
 	cin >> N >> B;
