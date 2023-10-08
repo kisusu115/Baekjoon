@@ -1,0 +1,22 @@
+#include<iostream>
+#include<string>
+#include<cmath>
+
+using namespace std;
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+	cout.tie(0);
+
+	long long n;
+	cin >> n;
+
+	long long q = sqrt(n);
+
+	if (q * q < n) {
+		++q;
+	}
+
+	cout << q;
+}
