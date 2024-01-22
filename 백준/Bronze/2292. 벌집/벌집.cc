@@ -12,15 +12,13 @@ int main() {
 	}
 
 	int floor = (ipt - 2) / 6 ;
-	int index = 1;
 	while (floor >= 0) {
-		floor -= index;
+		floor -= count;
+		count++;
 		if (floor < 0) {
-			cout << ++count;
+			cout << count;
 			break;
 		}
-		index++;
-		count++;
 	}
 	return 0;
 }
