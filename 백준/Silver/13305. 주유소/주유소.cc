@@ -23,7 +23,7 @@ int main() {
 	int minP = price[0];
 	for (int i = 0; i < N; i++) {
 		if (minP > price[i]) minP = price[i];
-		total += minP * road[i];
+		total += (long long)minP * road[i];
 	}
 
 	cout << total;
