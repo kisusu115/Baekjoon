@@ -1,41 +1,36 @@
 #include<iostream>
-#include<string.h>
 
 using namespace std;
-
 int N, M;
-int visited[1000] = { 0 };
-int Arr[1000][1000] = { 0 };
-int idx[1000] = { 0 };
-int answer = 0;
+int map[1001][1001];
+int visited[1001];
 
 void dfs(int n) {
-	if (visited[n] == 1) return;
 	visited[n] = 1;
-
-	int i = 0;
-	while (Arr[n][i] != 0) {
-		dfs(Arr[n][i]);
-		i++;
+	for (int i = 1; i <= N; i++) {
+		if (map[n][i] == 1 && visited[i] != 1) {
+			dfs(i);
+		}
 	}
 }
 
 int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+	cout.tie(0);
+
 	cin >> N >> M;
 	for (int i = 0; i < M; i++) {
-		int p1, p2;
-		cin >> p1 >> p2;
-
-		Arr[p1][idx[p1]++] = p2;
-		Arr[p2][idx[p2]++] = p1;
+		int u, v; cin >> u >> v;
+		map[u][v] = 1; map[v][u] = 1;
 	}
-
+	int cnt = 0;
 	for (int i = 1; i <= N; i++) {
-		if (visited[i] == 0) {
-			answer++;
+		if (visited[i] == false) {
+			cnt++;
 			dfs(i);
 		}
 	}
-
-	cout << answer;
+	cout << cnt;
+	return 0;
 }
