@@ -1,6 +1,6 @@
 #include<iostream>
 #include<vector>
-// 그래프를 만들고, 1에서 bfs나 dfs를 했을때 이전 노드이면 찾는거네
+
 using namespace std;
 
 int N;
