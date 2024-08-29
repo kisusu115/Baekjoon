@@ -11,6 +11,7 @@ int main() {
 	cout.tie(0);
 
 	int N; cin >> N;
+	int result = 1;
 	for (int i = 0; i < N; i++) {
 		cin >> arr[i];
 		int	high = 1;
@@ -20,11 +21,7 @@ int main() {
 			}
 		}
 		L[i] = high;
-	}
-
-	int result = 1;
-	for (int i = 0; i < N; i++) {
-		result = max(result, L[i]);
+		result = max(result, high);
 	}
 	cout << result;
 	return 0;
