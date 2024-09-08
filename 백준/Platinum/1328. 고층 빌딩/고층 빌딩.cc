@@ -26,13 +26,11 @@ unsigned long long GS(int n, int l, int r) {
 	if (l == 1) {
 		for (int i = 1; i <= n - r + 1; i++) {
 			sum += GS(n - 1, i, r - 1);
-			sum %= DIVIDE;
 		}
 	}
 	else if (r == 1) {
 		for (int i = 1; i <= n - l + 1; i++) {
 			sum += GS(n - 1, l - 1, i);
-			sum %= DIVIDE;
 		}
 	}
 	else {
@@ -40,13 +38,11 @@ unsigned long long GS(int n, int l, int r) {
 			unsigned long long Lsum = 0; unsigned long long Rsum = 0;
 			for (int j = 1; j <= i - l + 2; j++) {
 				Lsum += GS(i, l - 1, j);
-				Lsum %= DIVIDE;
 			}
 			for (int j = 1; j <= n - i - r + 1; j++) {
 				Rsum += GS(n - 1 - i, j, r - 1);
-				Rsum %= DIVIDE;
 			}
-			sum += (((Lsum % DIVIDE) * (Rsum % DIVIDE)) % DIVIDE) * (combination(n - 1, i) % DIVIDE) % DIVIDE;
+			sum += (((Lsum % DIVIDE) * (Rsum % DIVIDE)) % DIVIDE) * combination(n - 1, i) % DIVIDE;
 			sum %= DIVIDE;
 		}
 	}
