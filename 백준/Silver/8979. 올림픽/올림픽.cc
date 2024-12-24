@@ -4,9 +4,9 @@ using namespace std;
 int medal[1001][4];
 
 bool medalCmp(int v1[4], int v2[4]) {
-	if (v1[1] != v2[1]) return v1[1] > v2[1];
-	if (v1[2] != v2[2]) return v1[2] > v2[2];
-	return v1[3] > v2[3];
+	if (v1[1] != v2[1]) return v1[1] < v2[1];
+	if (v1[2] != v2[2]) return v1[2] < v2[2];
+	return v1[3] < v2[3];
 }
 
 int main() {
